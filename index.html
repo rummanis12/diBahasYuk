@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>diBahasYuk! - Belajar & Diskusi</title>
-  
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Feather Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script src="https://unpkg.com/feather-icons"></script>
-  
-  <!-- Showdown untuk Markdown -->
-  <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="materi.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <a href="home.html" class="navbar-logo" translate="no">di<span>BahasYuk</span>!</a>
-  <div class="navbar-extra">
-    <a href="#" id="menu-toggle"><i data-feather="menu"></i></a>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar-logo">di<span>BahasYuk</span>!</a>
+    <div class="navbar-extra">
+          <a href="#" id="menu-toggle"><i data-feather="menu"></i></a>
     <div id="auth-section" style="display: flex; align-items: center; gap: 10px;">
       <a id="login-btn"><i data-feather="user"></i></a>
     </div>
@@ -34,10 +23,10 @@
       <img id="user-avatar" src="" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%;">
       <button id="logout-btn" class="auth-btn">Logout</button>
     </div>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-<!-- Sidebar -->
+  <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
   <button id="close-sidebar"><i class="fas fa-times"></i></button>
   
@@ -79,101 +68,72 @@
   </ul>
 </div>
 
-<div class="overlay" id="overlay"></div>
+  <div class="overlay" id="overlay"></div>
 
-<!-- Home Button -->
-<a href="home.html" class="fab-home" id="homeBtn"><i data-feather="home"></i></a>
+  <!-- Main content wrapper -->
+  <div class="main-content">
+    <section class="hero" id="home">
+      <div class="content">
+        <h1>Ada yang belum paham?<span>diBahasYuk!</span></h1>
+        <p>Belajar jadi lebih gampang lewat materi, kuis, dan diskusi</p>
+        <a href="cardmateri.html" class="button">Yuk Belajar</a>
+      </div>
+    </section>
 
-<!-- Main Content -->
-<main class="hero">
-  <div class="content">
-    <div class="materi-card">
-      <div class="materi-header">
-    <span id="materiIdDisplay" style="font-size:0.8rem; color:#888;"></span>
-        <span class="badge" id="materiBadge"></span>
-        <h1 id="materiTitle">Judul Materi</h1>
-        <div class="meta">
-          <span id="materiDate"><i data-feather="calendar"></i> -</span>
-          <span id="materiAuthor"><i data-feather="user"></i> Penulis</span>
+    <section class="fitur" id="fitur">
+      <h2 class="judul">Fitur <span>Web</span></h2>
+      <div class="fitur-container">
+        <div class="fitur-image">
+          <img src="iconwebsite2.png">
         </div>
-      </div>
-      <div class="cover-img">
-        <img id="materiCover" src="" alt="Cover">
-      </div>
-      <div class="materi-source">
-        <p id="materiSource">Sumber: -</p>
-      </div>
-
-      <div class="materi-progress-container">
-        <div class="materi-progress-bar" id="materiProgressBar"></div>
-      </div>
-
-      <!-- BODY KONTEN -->
-<div class="materi-body" id="materiBody">
-        <p>Loading konten...</p>
-      </div>
-
-            <div class="fitur-item quiz-fitur">
-        <i class="fas fa-check-circle"></i>
-        <div class="fitur-content">
-          <h3>Quiz!</h3>
-          <p>Uji pemahamanmu dengan kuis interaktif setelah membaca materi.</p>
-          <a href="#" id="btn-quiz">🎯 Mulai Kuis</a>
-        </div>
-
-    </div>
-      </div>        
-
-    <div class="materi-nav">
-      <a class="nav-btn prev" id="prevMateri"><i data-feather="arrow-left"></i> Sebelumnya</a>
-      <a class="nav-btn menu" id="backToMenu"><i data-feather="book-open"></i> Kembali ke Menu</a>
-      <a class="nav-btn next" id="nextMateri">Berikutnya <i data-feather="arrow-right"></i></a>
-    </div>
-
-    <div class="komentar-section">
-      <h2><i data-feather="message-circle"></i> Diskusi & Komentar <span id="komentarCount" class="komentar-count">(0)</span></h2>
-      
-      <div class="comment-form">
-        <div class="comment-form-avatar">
-          <div class="avatar" id="commentFormAvatar">
-            <span>👤</span>
+        <div class="fitur-text">
+          <div class="fitur-item">
+            <i class="fas fa-book"></i>
+            <div>
+              <h3>Materi Pembelajaran</h3>
+              <p>Pahami pelajarannya dengan penjelasan yang lebih singkat, jelas, dan nggak bikin kepala jadi pusing.</p>
+            </div>
+          </div>
+          <div class="fitur-item">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h3>Quiz Materi</h3>
+              <p>Uji pemahaman kamu lewat quiz yang seru dan lihat sejauh mana kamu sudah menguasai materi. </p>
+            </div>
+          </div>
+          <div class="fitur-item">
+            <i class="fas fa-comment"></i>
+            <div>
+              <h3>Diskusi & Komentar</h3>
+              <p>Kamu masih bingung? Tanya, berbagi pendapat, dan belajar bersama teman lainnya</p>
+            </div>
           </div>
         </div>
-        <div class="comment-form-input">
-          <textarea id="commentInput" placeholder="Tulis komentar kamu di sini..."></textarea>
-          <button id="submitComment">Kirim →</button>
-        </div>
       </div>
+    </section>
+  </div>
 
-      <div id="commentList" class="daftar-komentar"></div>
+  <!-- Footer -->
+  <footer>
+    <div class="socials">
+      <a href="#"><i data-feather="instagram"></i></a>
+      <a href="#"><i data-feather="twitter"></i></a>
+      <a href="#"><i data-feather="facebook"></i></a>
     </div>
-  </div>
-</main>
+    <div class="links">
+      <a href="#home">Beranda</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#quizz">Quizz</a>
+      <a href="#subjects">Materi</a>
+    </div>
+    <div class="credit">
+      <p>Created by <a href="#">FILO (Five Infinity Loop) Team</a> | &copy; 2026</p>
+    </div>
+  </footer>
 
-<!-- Footer -->
-<footer>
-  <div class="socials">
-    <a href="#"><i data-feather="instagram"></i></a>
-    <a href="#"><i data-feather="twitter"></i></a>
-    <a href="#"><i data-feather="facebook"></i></a>
-  </div>
-  <div class="links">
-    <a href="#home">Beranda</a>
-    <a href="#fitur">Fitur</a>
-    <a href="#quizz">Quizz</a>
-    <a href="#subjects">Materi</a>
-  </div>
-  <div class="credit">
-    <p>Created by <a href="#">FILO (Five Infinity Loop) Team</a> | &copy; 2026</p>
-  </div>
-</footer>
 
-<!-- Toast Notification -->
-<div class="toast-notif" id="toast">✨ Komentar terkirim!</div>
-
-<!-- Scripts -->
-<script type="module" src="akun.js"></script>
-<script type="module" src="fitur.js"></script>
-<script type="module" src="materi.js"></script>
+  <script type="module" src="fitur.js"></script>
+  <script type="module" src="akun.js"></script>
+  <script type="module" src="home.js"></script>
 </body>
 </html>
